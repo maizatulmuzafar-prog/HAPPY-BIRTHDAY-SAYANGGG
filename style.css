@@ -1,0 +1,77 @@
+body {
+    margin:0;
+    font-family:Arial, sans-serif;
+    text-align:center;
+    background:linear-gradient(135deg,#001f5b,#0077ff);
+    color:white;
+}
+
+
+.content {
+    padding:40px 20px;
+}
+
+
+.box, .card {
+
+    background:white;
+    color:#003b8e;
+    padding:30px;
+    border-radius:25px;
+    max-width:350px;
+    margin:20px auto;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+
+}
+
+
+#lockScreen {
+
+    position:fixed;
+    inset:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#001f5b,#0077ff);
+    z-index:999;
+
+}
+
+
+input {
+
+    width:80%;
+    padding:12px;
+    border-radius:20px;
+    border:1px solid gray;
+
+}
+
+
+button {
+
+    margin-top:15px;
+    padding:12px 30px;
+    border:none;
+    border-radius:20px;
+    background:#004aad;
+    color:white;
+    cursor:pointer;
+
+}
+
+
+#error {
+
+    color:red;
+
+}.slideshow {
+    max-width: 350px;
+    margin: 20px auto;
+}
+
+.slideshow img {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
