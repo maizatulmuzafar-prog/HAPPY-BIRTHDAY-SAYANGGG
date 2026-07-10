@@ -71,10 +71,26 @@ button {
 }
 
 .slideshow img {
+
     width: 100%;
     border-radius: 25px;
+
+    opacity: 1;
+
+    transition: opacity 1.5s ease-in-out;
+
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
-}.love-letter {
+
+}
+
+
+.fade {
+
+    opacity: 0;
+
+}
+
+.love-letter {
     line-height: 1.8;
     text-align: left;
     animation: fadeIn 2s ease;
