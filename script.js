@@ -33,9 +33,18 @@ setInterval(function(){
         index = 0;
     }
 
-    document.getElementById("slide").src = photos[index];
+    let slide = document.getElementById("slide");
 
-}, 3000);
+slide.classList.add("fade");
+
+
+setTimeout(function(){
+
+    slide.src = photos[index];
+
+    slide.classList.remove("fade");
+
+}, 1000);
 function createHeart(){
 
     const heart = document.createElement("div");
