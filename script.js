@@ -35,7 +35,8 @@ setInterval(function(){
 
     document.getElementById("slide").src = photos[index];
 
-}, 3000);function createHeart(){
+}, 3000);
+function createHeart(){
 
     const heart = document.createElement("div");
 
@@ -61,3 +62,32 @@ setInterval(function(){
 
 
 setInterval(createHeart, 300);
+let music = document.getElementById("music");
+
+let playing = false;
+
+
+function toggleMusic(){
+
+    if(playing){
+
+        music.pause();
+
+        document.getElementById("musicBtn").innerHTML =
+        "🎵 Play Music";
+
+    }
+
+    else{
+
+        music.play();
+
+        document.getElementById("musicBtn").innerHTML =
+        "⏸ Pause Music";
+
+    }
+
+
+    playing = !playing;
+
+}
