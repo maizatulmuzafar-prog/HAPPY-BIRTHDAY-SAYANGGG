@@ -1,21 +1,15 @@
-function unlock(){
+function unlock() {
+    let password = document.getElementById("password").value;
 
-let password = document.getElementById("password").value;
-
-
-if(password === "Mukhlisah"){
-
-document.getElementById("lockScreen").style.display="none";
-
+    if (password === "Mukhlisah") {
+        document.getElementById("lockScreen").style.display = "none";
+    } else {
+        document.getElementById("error").innerHTML = "Wrong password 💔";
+    }
 }
 
-else{
-
-document.getElementById("error").innerHTML="Wrong password 💔";
-
-}
-
-}let photos = [
+// Photo slideshow
+let photos = [
     "images/photo1.jpg",
     "images/photo2.jpg",
     "images/photo3.jpg",
@@ -25,78 +19,59 @@ document.getElementById("error").innerHTML="Wrong password 💔";
 
 let index = 0;
 
-setInterval(function(){
+setInterval(function () {
+    let slide = document.getElementById("slide");
+
+    if (!slide) return;
 
     index++;
-
-    if(index >= photos.length){
+    if (index >= photos.length) {
         index = 0;
     }
 
-    let slide = document.getElementById("slide");
+    slide.classList.add("fade");
 
-slide.classList.add("fade");
+    setTimeout(function () {
+        slide.src = photos[index];
+        slide.classList.remove("fade");
+    }, 1000);
 
+}, 3000);
 
-setTimeout(function(){
-
-    slide.src = photos[index];
-
-    slide.classList.remove("fade");
-
-}, 1000);
-function createHeart(){
+// Floating hearts
+function createHeart() {
+    const container = document.querySelector(".hearts");
+    if (!container) return;
 
     const heart = document.createElement("div");
-
     heart.className = "heart";
-
     heart.innerHTML = "💙";
-
     heart.style.left = Math.random() * 100 + "%";
+    heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
 
-    heart.style.animationDuration = 
-    (Math.random() * 3 + 3) + "s";
-
-    document.querySelector(".hearts").appendChild(heart);
-
+    container.appendChild(heart);
 
     setTimeout(() => {
-
         heart.remove();
-
     }, 6000);
-
 }
 
-
 setInterval(createHeart, 300);
-let music = document.getElementById("music");
 
+// Music button
+let music = document.getElementById("music");
 let playing = false;
 
+function toggleMusic() {
+    if (!music) return;
 
-function toggleMusic(){
-
-    if(playing){
-
+    if (playing) {
         music.pause();
-
-        document.getElementById("musicBtn").innerHTML =
-        "🎵 Play Music";
-
-    }
-
-    else{
-
+        document.getElementById("musicBtn").innerHTML = "🎵 Play Music";
+    } else {
         music.play();
-
-        document.getElementById("musicBtn").innerHTML =
-        "⏸ Pause Music";
-
+        document.getElementById("musicBtn").innerHTML = "⏸ Pause Music";
     }
-
 
     playing = !playing;
-
 }
